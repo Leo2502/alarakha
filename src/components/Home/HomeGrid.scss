@@ -1,0 +1,49 @@
+@import '../../scss/extends';
+@import '../../scss/mixins';
+
+.productos_portada_container{
+    @media screen and (max-width:480px){
+        @include flexbox(flex, column wrap, space-around);
+    }
+    @include flexbox(flex, row wrap, space-between);
+    margin: 0.1em;
+    .productos_portada_container_item{
+        @media screen and (max-width:480px){
+            width: 100%;
+        }
+        width: 49.5%;
+        margin: 0.1em;   
+        overflow: hidden;
+        &:hover img{
+            transform: scale(1.15);
+            -webkit-transform:scale(1.15);
+        }
+        img{
+            @media screen and (max-width:480px){
+                height: auto;
+            }
+            &:hover{
+                filter: brightness(125%);
+                @extend %transition-general;
+            }
+        }
+    }
+}
+
+.container_carousel{
+    @media screen and (max-width:480px){
+        @include flexbox(flex, column wrap, space-around);
+        align-items: center;
+    }
+    @include flexbox(flex, row nowrap, space-around);
+    align-items: center;
+    .carousel{
+        @media screen and (max-width:480px){
+            width: 100%;
+        }
+        width: 40%;
+        p .link-light{
+            text-decoration: none;
+        }
+    }
+}

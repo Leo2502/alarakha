@@ -1,0 +1,48 @@
+@import "../../scss/extends";
+@import "../../scss/mixins";
+
+.productos_detail_container{
+    @include flexbox(flex, column wrap, flex-start);
+    @media screen and (max-width: 480px){
+        @include flexbox(flex, column wrap, space-around);
+        align-items: center;
+    }   
+    .nombreProducto{
+    text-transform: capitalize;
+        @media screen and (max-width: 480px){
+            font-size: 1.75em;
+        }
+    }
+    img{
+        width: 25%;
+        @media screen and (max-width: 480px){
+            width: 100%;
+        }
+        @media screen and (min-width: 481px) and (max-width:980px){
+            width: 50%;
+        } 
+    }
+}
+
+.button_atras{
+    color:$bg-principal;
+    padding: 0.8em;
+    border: solid 1px $bg-principal;
+    border-radius: 1.25em;
+    background-color: black;
+    font-size: 0.9em;
+    width: 10%;
+    @media screen and (max-width: 480px){
+        width: 30%;
+    }
+    @media screen and (min-width: 481px) and (max-width:980px){
+        width: 20%;
+    }    
+    &:hover{
+        background-color: rgb(34, 34, 34);
+        border: solid 1px $bg-principal;
+        border-radius: 0.75em;
+        @extend %transition-general;
+        color:$hover-principal;
+    }
+}

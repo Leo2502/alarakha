@@ -1,0 +1,40 @@
+@font-face{
+    font-family: Poppins;
+    src: url('../public/assets/web-fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: AmaticSC-Regular;
+    src: url('../public/assets/web-fonts/AmaticSC-Regular.ttf') format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+@import './scss/extends.scss';
+
+body{
+    font-family: Poppins !important;
+    h1{
+        margin: 0.2em 0;
+        font-family: AmaticSC-Regular;
+        text-align: center;
+        font-weight: bolder;
+        @extend %fondo-alarakha;
+        @media screen and (max-width:480px){
+            font-size: 3em;
+        }
+        font-size: 4em;
+    }
+    .enlace{
+        text-decoration: none;
+        color:black;
+        font-weight: normal;
+        &:hover{
+            color:rgb(248, 145, 163) !important;
+            transition: all 500ms ease-out;
+        }
+    }
+}

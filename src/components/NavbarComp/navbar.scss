@@ -1,0 +1,70 @@
+@import '../../scss/extends';
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    @extend %padding-hf;
+    @extend %fondo-hf;
+    .bg-leo{
+        @extend %fondo-hf;
+    }
+    .header_container_navbar{
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+        @media screen and (max-width:990px){
+            height: auto;
+        }
+        height: 12vh;
+        .navbar__logo{
+            @media screen and (max-width:480px){
+                width: 40%;
+            }
+            @media screen and (min-width:481px) and (max-width:960px){
+                width: 22%;
+            }
+            width: 13%;
+        }
+        .header_container_navbar--links__container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .dropdown-menu{
+                @extend %fondo-hf;
+                border-radius: 0.4em;
+                border-top: none;
+            }
+            .enlace-prin{
+                margin:0.9em;
+                background: linear-gradient(currentColor 0 0) bottom /var(--d, 0) 2px no-repeat;
+                @extend %transition-general;
+                &:visited{
+                    @extend %link-general;
+                }
+                &:active{
+                    color:white;
+                    background-color: black;
+                    @extend %transition-general;
+                }
+                &:hover{
+                    @extend %hover-general;
+                    --d:100%;
+                }
+            }
+        }
+        .cartwidget{
+            font-size: 1.25em;
+            opacity: 1;
+            transition: all 500ms ease-in-out;
+            &:hover{
+                transform: scale(1.25);
+            }
+        }
+        .cartwidget-none{
+            font-size: 0.01em;
+            opacity: 0;
+            transition: all 500ms ease-in-out;
+        }
+    }
+}
