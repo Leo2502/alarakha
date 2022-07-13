@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {carrito, enCarrito, setCart, guardarStorage} = useContext(ContextoCarrito)
+    const {carrito, enCarrito, setCart} = useContext(ContextoCarrito)
 
     const handleAtras = () => {
         navigate(-1)
@@ -29,7 +29,6 @@ const ItemDetail = ({item}) => {
                 }
             })
             setCart([...buscarProducto])
-            guardarStorage("Carrito", JSON.stringify([...buscarProducto]));
         } else {
             const alCarrito = {
                 ...item,
@@ -37,7 +36,6 @@ const ItemDetail = ({item}) => {
             }
             item.stock=item.stock-cantidad
             setCart([...carrito, alCarrito])
-            guardarStorage("Carrito", JSON.stringify([...carrito, alCarrito]));
         }
         setCantidad(0)
     }
