@@ -7,6 +7,8 @@ import { Formik } from "formik"
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
+import './Checkout.scss'
+import CarouselMain from "../Home/HomeCarousel"
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -34,7 +36,7 @@ const Checkout = () => {
 
     window.scrollTo(0, 0)
 
-    const { carrito, totalCarrito, vaciarCarrito } = useCartContext()
+    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)
 
@@ -66,11 +68,13 @@ const Checkout = () => {
             }
         })
 
+
         if (sinStock.length === 0) {
             addDoc(ordenesRef, orden)
                 .then((doc) => {
                     batch.commit()
                     setOrdenId(doc.id)
+                    setResumen(carrito)
                     vaciarCarrito()
                 })
         } else {
@@ -84,7 +88,29 @@ const Checkout = () => {
                 <h2>Gracias por elegirnos!</h2>
                 <hr/>
                 <p>Su número de compra es: {ordenId}</p>
-                <Link to="/"><button className="btn btn-primary m-5" onClick={vaciarCarrito}>Finalizar</button></Link>
+                <div>
+                    <p>Resumen de tu compra:</p>
+                    {   
+                        resumen.map(item => (
+                            <div key={item.id} className="checkOut_producto_container my-2">
+                                <div className="checkOut_producto_container_detail">
+                                <h5 className="nombreProducto">{item.nombre}</h5>
+                                <p>Cantidad: {item.cantidad}</p>
+                                <h6>Precio: ${item.precio * item.cantidad}</h6>
+                                </div>
+                                <img src={item.img} alt={item.nombre}/>
+                                <hr/>
+                            </div>
+                        ))
+                    }
+                </div>
+                <Link to="/"><button className="btn btn-primary m-5">Finalizar</button></Link>
+                <hr/>
+
+                <div>
+                    <h4>También puede interesarte:</h4>
+                    <CarouselMain/>
+                </div>
             </div>
         )
     }

@@ -1,0 +1,24 @@
+@import '../../scss/extends';
+@import '../../scss/mixins';
+
+.checkOut_producto_container{
+    @include flexbox(flex, row nowrap, space-between);
+    align-items: center;
+    .checkOut_producto_container_detail{
+        @include flexbox(flex, column wrap, space-between);
+        .nombreProducto{
+            text-transform: capitalize;
+            padding: 0.5em 0;
+            text-decoration: underline;
+        }
+    }
+    img{
+        width: 10%;
+        @media screen and (max-width: 480px) {
+            width: 25%;
+        }
+        @media screen and (min-width: 481px) and (max-width: 960px) {
+            width: 17%;
+        }
+    }
+}
