@@ -1,7 +1,15 @@
 <h1 align="center">Hola 👋, soy Leonel Sollazzo</h1>
 <h3 align="center">Un apasionado frontend developer de Argentina</h3>
 
-<p>En esta aplicación podrás simular una compra de un e-commerce (basado en el emprendimiento de una amiga), completando la compra y orden con un formulario desarrollado con Formik, además de las tecnologías detalladas más abajo.</p>
+<p>En esta aplicación podrás simular una compra de un e-commerce (basado en el emprendimiento de una amiga), completando la compra y orden con un formulario desarrollado con Formik, además de las tecnologías detalladas más abajo.
+Además se usaron librerías como:</p>
+<ul>
+<li>React-bootstrap</li>
+<li>React-icons</li>
+<li>React-router-dom</li>
+<li>Sweetalert</li>
+<li>Yup</li>
+</ul>
 
 - 🌱 I’m currently learning **React JS**
 
