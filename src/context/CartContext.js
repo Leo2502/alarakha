@@ -8,9 +8,11 @@ export const useCartContext = () => {
 
 export const CartProvider = ({children}) => {
 
-    let carritoGuardado = localStorage.getItem("Carrito");
+    // let carritoGuardado = localStorage.getItem("Carrito");
 
-    const [carrito, setCart] = useState(carritoGuardado? JSON.parse(localStorage.getItem("Carrito")) : [])
+    const [carrito, setCart] = useState([])
+
+    // carritoGuardado? JSON.parse(localStorage.getItem("Carrito")) : 
   
     const enCarrito = (id) => {
       return carrito.some((producto) => producto.id === id)
@@ -24,16 +26,16 @@ export const CartProvider = ({children}) => {
       return carrito.reduce( (total, producto) => total += producto.cantidad, 0 )
     }
 
-    const guardarStorage = (k, v) => { localStorage.setItem(k, v) };
+    // const guardarStorage = (k, v) => { localStorage.setItem(k, v) };
   
     const vaciarCarrito = () => {
       setCart( [] )
-      guardarStorage("Carrito", "")
+      // guardarStorage("Carrito", "")
     }
 
     const eliminarItem = (id) => {
         setCart( carrito.filter((producto) => producto.id !== id) )
-        guardarStorage("Carrito", carrito)
+        // guardarStorage("Carrito", carrito)
     }
 
     return (
@@ -46,7 +48,7 @@ export const CartProvider = ({children}) => {
                 cantidadEnCarrito, 
                 vaciarCarrito,
                 eliminarItem,
-                guardarStorage,
+                // guardarStorage,
             } 
         }>
             {children}
