@@ -29,6 +29,7 @@ const ItemDetail = ({item}) => {
                 }
             })
             setCart([...buscarProducto])
+            guardarStorage("Carrito", JSON.stringify([...buscarProducto]));
         } else {
             const alCarrito = {
                 ...item,
@@ -36,9 +37,9 @@ const ItemDetail = ({item}) => {
             }
             item.stock=item.stock-cantidad
             setCart([...carrito, alCarrito])
+            guardarStorage("Carrito", JSON.stringify([...carrito, alCarrito]));
         }
         setCantidad(0)
-        guardarStorage("Carrito", carrito)
     }
 
     // const [ofertas, setOfertas] = useState([])
