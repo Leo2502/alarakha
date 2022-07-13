@@ -1,12 +1,16 @@
+@import '../../scss/extends';
+@import '../../scss/mixins';
+
 .checkOut_producto_container{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    .nombreProducto{
-        text-transform: capitalize;
-        padding: 0.5em 0;
-        text-decoration: underline;
+    @include flexbox(flex, row nowrap, space-between);
+    align-items: center;
+    .checkOut_producto_container_detail{
+        @include flexbox(flex, column wrap, space-between);
+        .nombreProducto{
+            text-transform: capitalize;
+            padding: 0.5em 0;
+            text-decoration: underline;
+        }
     }
     img{
         width: 10%;
