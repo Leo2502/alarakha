@@ -28,7 +28,7 @@ const Tienda = () => {
         </p>
         </div>
         <div>
-            <h2 id="envios">Envíos</h2>
+            <h2>Envíos</h2>
             <p className="texto-comun mb-5">
               Podemos enviartelo por Correo Argentino a tu sucursal más cercana o a domicilio, con costo a cargo del cliente. Los envios por correo tardan de  3 a 10 días HÁBILES aprox. Tené en cuenta que este plazo comienza a contar desde que confirmamos tu pago.<br/>
               <br/>

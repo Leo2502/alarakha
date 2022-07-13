@@ -19,7 +19,6 @@ const Footer = () => {
             <li><Link className='enlace' to={"/contacto/#/encabezado"}>Contacto</Link></li>
             <li><Link className='enlace' to={"/medios"}>Medios de Pago</Link></li>
             <li><Link className='enlace' to={"/tienda"}>Tienda</Link></li>
-            <li><Link className='enlace' to={"/tienda/#/envios"}>Tienda</Link></li>
         </ul>
         </div>
 
