@@ -1,6 +1,6 @@
 import { ItemListContainer } from '../ItemListContainter/ItemListCointainer';
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Cart from '../Cart/Cart'
 import Checkout from '../Checkout/Checkout';
 import Contacto from '../Contacto/Contacto';
@@ -13,7 +13,7 @@ import NavbarComp from '../NavbarComp/navbarComp';
 
 const RoutesComp = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
         <div className="App">
             <NavbarComp/>
             <Routes>
@@ -31,7 +31,7 @@ const RoutesComp = () => {
             </Routes>
             <Footer/>
         </div>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
