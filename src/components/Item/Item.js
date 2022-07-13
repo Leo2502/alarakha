@@ -2,7 +2,6 @@ import './Item.scss'
 import { Link } from "react-router-dom"
 
 const Item = ({item}) => {
-
     return (
         <div className='item_list_producto_container'>
             <h4 className="mb-3 nombreProducto">{item.nombre}</h4>

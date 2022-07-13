@@ -4,6 +4,8 @@ import { AiOutlineMail } from 'react-icons/ai'
 
 const Contacto = () => {
 
+    window.scrollTo(0, 0)
+
     return (
         <div className='contactos__container'>
             <div className="contactos__container__item my-5">

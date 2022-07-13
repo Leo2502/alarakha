@@ -7,7 +7,7 @@ import CartWidget from '../CartWidget/CartWidget'
 
 const NavbarComp = () => {
     return (
-    <header>
+    <header id="encabezado">
         <Navbar className='header_container_navbar bg-leo' expand="lg">
             <Container className='d-flex justify-content-between'>
                 <Navbar.Brand className='navbar__logo animate__animated animate__bounce'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" className='w-100'/></Link></Navbar.Brand>

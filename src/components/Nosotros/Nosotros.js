@@ -1,6 +1,9 @@
 import './Nosotros.scss'
 
 export const Nosotros = () => {
+    
+    window.scrollTo(0, 0)
+
     return(
         <div>
         <div className="nosotros">

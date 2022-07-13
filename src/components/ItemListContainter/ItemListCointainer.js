@@ -8,6 +8,8 @@ import './ItemListContainer.scss'
 
 export const ItemListContainer = () => {
 
+    window.scrollTo(0, 0)
+
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 

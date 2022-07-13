@@ -4,6 +4,11 @@ import { BiMailSend, BiMap } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+
+    const onClickUp = () => {
+        window.scrollTo(0, 0)
+    }
+
     return(
         <footer>
         <div className="menu__footer">
@@ -11,9 +16,10 @@ const Footer = () => {
         <div className="menu__footer__item">
         <h4 className="menu__footer__item__title fs-5">Tienda</h4>
         <ul className="m-0 mb-4 p-0">
-            <li><Link className='enlace' to={"/contacto"}>Contacto</Link></li>
+            <li><Link className='enlace' to={"/contacto/#/encabezado"}>Contacto</Link></li>
             <li><Link className='enlace' to={"/medios"}>Medios de Pago</Link></li>
             <li><Link className='enlace' to={"/tienda"}>Tienda</Link></li>
+            <li><Link className='enlace' to={"/tienda/#/envios"}>Tienda</Link></li>
         </ul>
         </div>
 
@@ -39,7 +45,7 @@ const Footer = () => {
 
 
         {/* Botón subir a inicio */}
-        <a className="menu__footer__item--flecha-header" data-aos="fade-up" href="#"><BsFillArrowUpCircleFill/></a>
+        <p className="menu__footer__item--flecha-header" data-aos="fade-up" onClick={onClickUp}><BsFillArrowUpCircleFill/></p>
     </div>
     <div>
         <img className="footer__logo" src="../assets/multimedia/images/general/logo.png" alt="logo-Alarakha"/>

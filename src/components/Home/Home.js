@@ -2,6 +2,9 @@ import CarouselMain from "./HomeCarousel"
 import HomeGrid from "./HomeGrid"
 
 const Home = () => {
+
+    window.scrollTo(0, 0)
+    
     return (
         <div>
         <div className="mb-1 w-100">

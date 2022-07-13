@@ -7,6 +7,8 @@ import CarouselMain from "../Home/HomeCarousel"
 
 const Cart = () => {
 
+    window.scrollTo(0, 0)
+
     const {carrito, totalCarrito, vaciarCarrito, eliminarItem} = useCartContext()
 
     if (carrito.length === 0) return <CartVacio/>   

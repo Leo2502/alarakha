@@ -31,6 +31,8 @@ const schema = Yup.object().shape({
 
 const Checkout = () => {
 
+    window.scrollTo(0, 0)
+
     const { carrito, totalCarrito, vaciarCarrito, } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)

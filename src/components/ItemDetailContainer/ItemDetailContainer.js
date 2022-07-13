@@ -8,6 +8,8 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 
 export const ItemDetailContainer = () => {
 
+    window.scrollTo(0, 0)
+
     const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
     
