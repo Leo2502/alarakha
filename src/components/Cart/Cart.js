@@ -15,7 +15,7 @@ const Cart = () => {
 
     return (
         <div className="container my-5">
-            <h2>Resumen de su compra:</h2>
+            <h2>Resumen de su carrito:</h2>
             <hr/>
 
             {   
