@@ -6,14 +6,12 @@
         @include flexbox(flex, column wrap, space-around);
     }
     @include flexbox(flex, row wrap, space-around);
-    margin: 0.1em;
     img{
         width: 100%;
         @media screen and (max-width:480px){
             height: auto;
             filter:none;
         }
-        margin: 0.1em;
         filter: grayscale(60%);
         &:hover{
             @extend %box-shadow-negra;
