@@ -9,11 +9,10 @@ export const useCartContext = () => {
 export const CartProvider = ({children}) => {
 
     let carritoGuardado = localStorage.getItem("Carrito");
-    console.log(carritoGuardado)
 
     const guardarStorage = (k, v) => { localStorage.setItem(k, v) };
 
-    const [carrito, setCart] = useState(carritoGuardado?JSON.parse(localStorage.getItem("Carrito")):[])
+    const [carrito, setCart] = useState(carritoGuardado!==[]?JSON.parse(localStorage.getItem("Carrito")):[])
     guardarStorage("Carrito", JSON.stringify(carrito))
 
   
