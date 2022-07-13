@@ -3,6 +3,7 @@ import './ItemDetail.scss'
 import { useNavigate, Link } from "react-router-dom"
 import { useState, useContext } from 'react'
 import { ContextoCarrito } from "../../context/CartContext"
+import swal from 'sweetalert'
 
 const ItemDetail = ({item}) => {
 
@@ -17,7 +18,7 @@ const ItemDetail = ({item}) => {
     }
 
     const agregado = () => {
-        cantidad>0 && alert(`Agregaste ${cantidad} unidades del ${item.nombre} al carrito!`)
+        cantidad>0 && swal("Agregado!", `Agregaste ${cantidad} unidades de ${item.nombre} al carrito!`, "success");
         if (enCarrito(item.id)){
             const buscarProducto = carrito.map(producto=>{
                 if(producto.id===item.id){

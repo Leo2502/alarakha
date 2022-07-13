@@ -6,6 +6,7 @@ import { dataBase } from "../../firebase/config"
 import { Formik } from "formik"
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert'
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -73,7 +74,7 @@ const Checkout = () => {
                     vaciarCarrito()
                 })
         } else {
-            alert("Hay productos sin stock")
+            swal("Error!", "Hay productos sin stock! Vacíe el carrito y vuelva a intentar", "error");
         }
     }
 
