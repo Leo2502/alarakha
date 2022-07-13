@@ -18,6 +18,10 @@ const schema = Yup.object().shape({
     email: Yup.string()
                 .required('Este campo es obligatorio')
                 .email('Formato de email inválido'),
+    telefono: Yup.number()
+                .required('Este campo es obligatorio, sin código ni guiones')
+                .typeError('Debe ser un número')
+                .min(10, 'Número inválido'),
     calle: Yup.string()
                 .required('Este campo es obligatorio')
                 .min(4, 'El nombre de la calle es demasiado corto')
@@ -128,6 +132,7 @@ const Checkout = () => {
                 initialValues={ {
                     nombre: '',
                     email: '',
+                    telefono: '',
                     calle: '',
                     altura: '',
                     codigoPostal: '',
@@ -156,6 +161,16 @@ const Checkout = () => {
                             className="form-control my-2"
                         />
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
+
+                        <input
+                            value={formik.values.telefono}
+                            name="telefono"
+                            onChange={formik.handleChange}
+                            type={"text"}
+                            placeholder="1132323232"
+                            className="form-control my-2"
+                        />
+                        {formik.errors.telefono && <p className="alert alert-danger">{formik.errors.telefono}</p>}
 
                         <input
                             value={formik.values.calle}

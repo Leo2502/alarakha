@@ -1,6 +1,7 @@
 import './Contacto.scss'
 import { AiOutlineWhatsApp } from 'react-icons/ai'
 import { AiOutlineMail } from 'react-icons/ai'
+import Comentarios from './Comentarios'
 
 const Contacto = () => {
 
@@ -21,7 +22,7 @@ const Contacto = () => {
             </div>
             <div className="contactos__container__item my-5">
                 <h3>Comentanos!</h3>
-                Formulario de contacto
+                <Comentarios/>
             </div>
         </div>    
     )
