@@ -8,7 +8,6 @@ import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
 import './Checkout.scss'
-import CarouselMain from "../Home/HomeCarousel"
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -40,7 +39,7 @@ const Checkout = () => {
 
     window.scrollTo(0, 0)
 
-    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen } = useCartContext()
+    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen, ofertas } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)
 
@@ -113,7 +112,15 @@ const Checkout = () => {
 
                 <div>
                     <h4>También puede interesarte:</h4>
-                    <CarouselMain/>
+                    <div className="oferta_producto_container my-2">
+                    {   
+                    ofertas.map((item) => (
+                        <div key={item.id} className="mb-1 mt-1">
+                            <Link to={`/item/${item.id}`} className="oferta_producto_container_link"><img src={item.img} alt={item.nombre}/></Link>
+                        </div>
+                    ))
+                    }
+            </div>
                 </div>
             </div>
         )

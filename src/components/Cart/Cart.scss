@@ -20,12 +20,17 @@
     }
 }
 .oferta_producto_container{
-    @include flexbox(flex, row nowrap, space-between);
-    align-items: center;
+    @media screen and (max-width:480px){
+        @include flexbox(flex, column wrap, space-around);
+    }
+    @include flexbox(flex, row wrap, space-around);
     .oferta_producto_container_link{
-        width: 20%;
         img{
             width: 100%;
+            @media screen and (max-width:480px){
+                height: auto;
+            }
+            height: 20vh;
         }
     }
 }

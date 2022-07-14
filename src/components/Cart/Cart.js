@@ -3,7 +3,6 @@ import { BsTrash } from "react-icons/bs"
 import './Cart.scss'
 import { Link } from 'react-router-dom'
 import CartVacio from './CartVacio'
-import CarouselMain from "../Home/HomeCarousel"
 import { collection, getDocs } from "firebase/firestore"
 import { dataBase } from "../../firebase/config"
 import { useEffect } from "react"
@@ -71,11 +70,11 @@ const Cart = () => {
                 <div className="oferta_producto_container my-2">
                 {   
                 ofertas.map((item) => (
-                <div key={item.id}>
-                    <Link to={`/item/${item.id}`} className="oferta_producto_container_link m-1"><img src={item.img} alt={item.nombre}/></Link>
+                <div key={item.id} className="mb-1 mt-1">
+                    <Link to={`/item/${item.id}`} className="oferta_producto_container_link"><img src={item.img} alt={item.nombre}/></Link>
                 </div>
                 ))
-            }
+                }
             </div>
             </div>
         </div>
