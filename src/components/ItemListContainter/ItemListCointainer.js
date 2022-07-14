@@ -33,7 +33,6 @@ export const ItemListContainer = () => {
                     let b = y.categoria.toLowerCase()
                     return a === b ? 0 : a > b ? 1 : -1
                 }) )
-                console.log(productos)
             })
             .finally(() => {
                 setLoading(false)

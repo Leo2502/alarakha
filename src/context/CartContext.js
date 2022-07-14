@@ -16,6 +16,8 @@ export const CartProvider = ({children}) => {
     guardarStorage("Carrito", JSON.stringify(carrito))
 
     const [resumen, setResumen] = useState([])
+    const [ofertas, setOfertas] = useState([])
+    console.log(carrito)
   
     const enCarrito = (id) => {
       return carrito.some((producto) => producto.id === id)
@@ -49,6 +51,8 @@ export const CartProvider = ({children}) => {
                 eliminarItem,
                 resumen,
                 setResumen,
+                ofertas,
+                setOfertas,
             } 
         }>
             {children}

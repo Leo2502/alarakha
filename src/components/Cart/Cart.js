@@ -4,12 +4,31 @@ import './Cart.scss'
 import { Link } from 'react-router-dom'
 import CartVacio from './CartVacio'
 import CarouselMain from "../Home/HomeCarousel"
+import { collection, getDocs } from "firebase/firestore"
+import { dataBase } from "../../firebase/config"
+import { useEffect } from "react"
 
 const Cart = () => {
 
     window.scrollTo(0, 0)
 
-    const {carrito, totalCarrito, vaciarCarrito, eliminarItem} = useCartContext()
+    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas} = useCartContext()
+
+    useEffect (()=>{
+        const productosR = collection(dataBase, "productos")
+
+        getDocs(productosR)
+            .then((res) => {
+                const productos = res.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                const armarOferta = productos.filter(producto=>producto.id!==carrito.????????.id)
+                setOfertas( armarOferta )
+            })
+    },[])
 
     if (carrito.length === 0) return <CartVacio/>   
 
