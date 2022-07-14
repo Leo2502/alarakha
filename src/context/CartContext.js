@@ -17,7 +17,7 @@ export const CartProvider = ({children}) => {
 
     const [resumen, setResumen] = useState([])
     const [ofertas, setOfertas] = useState([])
-    console.log(carrito)
+    console.log(ofertas)
   
     const enCarrito = (id) => {
       return carrito.some((producto) => producto.id === id)

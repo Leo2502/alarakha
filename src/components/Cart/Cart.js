@@ -12,7 +12,7 @@ const Cart = () => {
 
     window.scrollTo(0, 0)
 
-    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas} = useCartContext()
+    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas, ofertas} = useCartContext()
 
     useEffect (()=>{
         const productosR = collection(dataBase, "productos")
@@ -25,8 +25,10 @@ const Cart = () => {
                         ...doc.data()
                     }
                 })
-                const armarOferta = productos.filter(producto=>producto.id!==carrito.????????.id)
-                setOfertas( armarOferta )
+                carrito.map(item=>{
+                    const ofrecer = productos.filter(producto=>producto.id!==item.id)
+                    return setOfertas( ofrecer )
+                })
             })
     },[])
 
@@ -66,7 +68,15 @@ const Cart = () => {
 
             <div>
                 <h4>También puede interesarte:</h4>
-                <CarouselMain/>
+                <div className="oferta_producto_container my-2">
+                {   
+                ofertas.map((item) => (
+                <div key={item.id}>
+                    <Link to={`/item/${item.id}`} className="oferta_producto_container_link m-1"><img src={item.img} alt={item.nombre}/></Link>
+                </div>
+                ))
+            }
+            </div>
             </div>
         </div>
     )
