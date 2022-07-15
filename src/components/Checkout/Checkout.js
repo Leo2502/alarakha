@@ -8,6 +8,7 @@ import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
 import './Checkout.scss'
+import SlickSlide from "../Cart/Slider"
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -111,16 +112,11 @@ const Checkout = () => {
                 <hr/>
 
                 <div>
-                    <h4>También puede interesarte:</h4>
-                    <div className="oferta_producto_container my-2">
-                    {   
-                    ofertas.map((item) => (
-                        <div key={item.id} className="mb-1 mt-1">
-                            <Link to={`/item/${item.id}`} className="oferta_producto_container_link"><img src={item.img} alt={item.nombre}/></Link>
-                        </div>
-                    ))
-                    }
-            </div>
+                    <h4 className="mb-2">También puede interesarte:</h4>
+                    <hr/>
+                    <div className="slick_container">
+                        <SlickSlide/>
+                    </div>
                 </div>
             </div>
         )

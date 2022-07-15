@@ -34,3 +34,25 @@
         }
     }
 }
+.slide{
+    .slide_container{
+        @include flexbox(flex, column wrap, space-around);
+        align-items: center;
+        .slide_container_nombre{
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        img{
+            @media screen and (max-width:480px){
+                height: 10vh;
+                width: auto;
+            }
+            @media screen and (min-width:481px) and (max-width:960px){
+                height: 15vh;
+                width: auto;
+            }
+            height: 30vh;
+            width: auto;
+        }
+    }
+}

@@ -6,12 +6,13 @@ import CartVacio from './CartVacio'
 import { collection, getDocs } from "firebase/firestore"
 import { dataBase } from "../../firebase/config"
 import { useEffect } from "react"
+import SlickSlide from './Slider'
 
 const Cart = () => {
 
     window.scrollTo(0, 0)
 
-    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas, ofertas, enCarrito} = useCartContext()
+    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas, enCarrito} = useCartContext()
 
     useEffect (()=>{
         const productosR = collection(dataBase, "productos")
@@ -67,16 +68,11 @@ const Cart = () => {
             <hr/>
 
             <div>
-                <h4>También puede interesarte:</h4>
-                <div className="oferta_producto_container my-2">
-                {   
-                ofertas.map((item) => (
-                <div key={item.id} className="mb-1 mt-1">
-                    <Link to={`/item/${item.id}`} className="oferta_producto_container_link"><img src={item.img} alt={item.nombre}/></Link>
+                <h4 className="mb-2">También puede interesarte:</h4>
+                <hr/>
+                <div className="slick_container">
+                    <SlickSlide/>
                 </div>
-                ))
-                }
-            </div>
             </div>
         </div>
     )
