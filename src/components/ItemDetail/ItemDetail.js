@@ -41,26 +41,6 @@ const ItemDetail = ({item}) => {
         setCantidad(0)
     }
 
-    // const [ofertas, setOfertas] = useState([])
-
-    // if (enCarrito(item.id)){
-    //     const buscarProducto = carrito.map(producto=>{
-    //         if(producto.id!==item.id){
-    //             return producto;
-    //         } else {
-    //             return producto;
-    //         }
-    //     })
-    //     setOfertas([...buscarProducto])
-    // } else {
-    //     const ofrecer = {
-    //         ...item
-    //     }
-    //     setOfertas([...ofertas, ofrecer])
-    // }
-    // console.log(ofertas)
-
-
     return (
         <div>
         <div className="productos_detail_container my-2">
