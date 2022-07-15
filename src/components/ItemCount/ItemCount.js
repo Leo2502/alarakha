@@ -5,7 +5,6 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
     const incrementar = () => {
         if (contador>=max){
             setContador(contador)
-            alert("Máximo de stock alcanzado")
         } else {
             setContador( contador + 1 )
         }

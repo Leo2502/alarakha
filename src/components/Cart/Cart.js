@@ -11,7 +11,7 @@ const Cart = () => {
 
     window.scrollTo(0, 0)
 
-    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas, ofertas} = useCartContext()
+    const {carrito, totalCarrito, vaciarCarrito, eliminarItem, setOfertas, ofertas, enCarrito} = useCartContext()
 
     useEffect (()=>{
         const productosR = collection(dataBase, "productos")
@@ -24,12 +24,13 @@ const Cart = () => {
                         ...doc.data()
                     }
                 })
-                carrito.map(item=>{
-                    const ofrecer = productos.filter(producto=>producto.id!==item.id)
-                    return setOfertas( ofrecer )
+                const interes = []
+                productos.map(producto=>{
+                    !enCarrito(producto.id) && interes.push(producto)
+                    return setOfertas(interes)
                 })
             })
-    },[])
+    },[carrito])
 
     if (carrito.length === 0) return <CartVacio/>   
 
