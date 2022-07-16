@@ -38,9 +38,23 @@
     .slide_container{
         @include flexbox(flex, column wrap, space-around);
         align-items: center;
+        button{
+            color:$bg-principal;
+            padding: 1em;
+            border: solid 1px $bg-principal;
+            border-radius: 1.25em;
+            background-color: black;
+            font-size: 0.8em;
+            &:hover{
+                background-color: rgb(34, 34, 34);
+                border: solid 1px $bg-principal;
+                border-radius: 0.75em;
+                @extend %transition-general;
+                color:$hover-principal;
+            }
+        }
         .slide_container_nombre{
             text-transform: capitalize;
-            font-weight: bold;
         }
         img{
             @media screen and (max-width:480px){

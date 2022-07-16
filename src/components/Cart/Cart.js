@@ -47,7 +47,8 @@ const Cart = () => {
                     <div>
                     <h5 className="nombreProducto">{item.nombre}</h5>
                     <p>Cantidad: {item.cantidad}</p>
-                    <h6>Precio: ${item.precio * item.cantidad}</h6>
+                    <p>Precio unitario: ${item.precio}</p>
+                    <h6>Total: ${item.precio * item.cantidad}</h6>
                     </div>
                     <img src={item.img} alt={item.nombre}/>
                     <button onClick={() => eliminarItem(item.id)} className="btn btn-danger"><BsTrash/></button>
@@ -58,13 +59,7 @@ const Cart = () => {
             }
 
 
-            <h4 className="mt-5">Total a pagar: ${totalCarrito()}</h4>
-            <div className="mt-5">
-            <Link to="/categorias"><button className="btn btn-primary m-1">Continuar comprando</button></Link>
-            <Link to="/checkout" className="btn btn-success m-1">Terminar compra</Link>
-            <button onClick={vaciarCarrito} className="btn btn-danger m-1">Vaciar carrito</button>
-            </div>
-
+            <h4 className="mt-3">Total a pagar: ${totalCarrito()}</h4>
             <hr/>
 
             <div>
@@ -73,6 +68,11 @@ const Cart = () => {
                 <div className="slick_container">
                     <SlickSlide/>
                 </div>
+            </div>
+            <div className="my-4">
+            <Link to="/categorias"><button className="btn btn-primary m-1">Continuar comprando</button></Link>
+            <Link to="/checkout" className="btn btn-success m-1">Terminar compra</Link>
+            <button onClick={vaciarCarrito} className="btn btn-danger m-1">Vaciar carrito</button>
             </div>
         </div>
     )

@@ -15,14 +15,14 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
 
     if (max === 0) {
         return (
-            <div className="my-3">
+            <div className="my-2">
                 <p>Producto momentáneamente sin stock. Sepa disculpar</p>
             </div>
         )
     }
     
     return(
-        <div className="mt-4">
+        <div className="mt-2">
 
             <div className="container_counter">
                 <button className="btn btn-unline-primary" onClick={reducir} disabled={contador < 0}>-</button>

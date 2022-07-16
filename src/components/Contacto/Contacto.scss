@@ -8,9 +8,7 @@
         @include flexbox(flex, column wrap, space-around);
     }
     .contactos__container__item{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: flex-start;
+        @include flexbox(flex, column wrap, flex-start);
         align-items: center;
         h3{
             padding: 0.25em 0.5em;
@@ -28,6 +26,10 @@
         }
         li{
             overflow: hidden;
+        }
+        button{
+            color: white;
+            padding: 0.8em;
         }
     }
     .contactos__container__item--ubicacion{
