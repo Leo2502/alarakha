@@ -3,7 +3,7 @@
 
 .productos_detail_container{
     @include flexbox(flex, row nowrap, center);
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 960px){
         @include flexbox(flex, column wrap, space-around);
         align-items: center;
     }   
@@ -28,7 +28,7 @@
             width: 100%;
         }
         @media screen and (min-width: 481px) and (max-width:980px){
-            width: 50%;
+            width: 100%;
         } 
     }
 }
