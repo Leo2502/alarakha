@@ -36,7 +36,7 @@ header{
                 border-top: none;
             }
             .enlace-prin{
-                margin:0.9em;
+                margin:0 0.9em;
                 background: linear-gradient(currentColor 0 0) bottom /var(--d, 0) 2px no-repeat;
                 @extend %transition-general;
                 &:visited{

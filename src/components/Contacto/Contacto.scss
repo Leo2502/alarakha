@@ -33,14 +33,11 @@
         }
     }
     .contactos__container__item--ubicacion{
-        flex-grow: calc(0.75);
+        flex-grow: calc(0.6);
         overflow: hidden;
         &:hover iframe{
             @extend %box-shadow-negra;
             @extend %transition-general;
-        }
-        .contactos__container__item__map{
-            border: 0;
         }
     }
 }

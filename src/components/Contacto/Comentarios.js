@@ -66,6 +66,7 @@ const Comentarios = () => {
                             placeholder="Dejá tu comentario"
                             className="form-control display-7 my-2"
                             data-form-field="Message"
+                            style={{height:"20vh"}}
                             />
                         {formik.errors.comentarios && <p className="alert alert-danger">{formik.errors.comentarios}</p>}
 
