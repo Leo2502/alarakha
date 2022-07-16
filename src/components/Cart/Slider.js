@@ -25,12 +25,13 @@ const SlickSlide = () => {
     >
     {   
       ofertas.map((item) => (
-        <SwiperSlide key={item.id} className="slide">
-            <Link to={`/item/${item.id}`} className="slide_container enlace">
+        <SwiperSlide key={item.id} className="slide mb-3">
+            <div className="slide_container">
               <p className='slide_container_nombre'>{item.nombre}</p>
               <img src={item.img} alt={item.nombre}/>
               <p className='slide_container_precio mt-2'>${item.precio}</p>
-            </Link>
+              <Link to={`/item/${item.id}`}><button className="mb-3 enlace">Lo quiero!</button></Link>
+            </div>
         </SwiperSlide>
         ))
     }

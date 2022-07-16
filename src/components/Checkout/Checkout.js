@@ -40,7 +40,7 @@ const Checkout = () => {
 
     window.scrollTo(0, 0)
 
-    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen, ofertas } = useCartContext()
+    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)
 
@@ -91,7 +91,8 @@ const Checkout = () => {
             <div className="container my-5">
                 <h2>Gracias por elegirnos!</h2>
                 <hr/>
-                <p>Su número de compra es: {ordenId}</p>
+                <p>Nos pondremos en contacto para continuar con la gestión de pago</p>
+                <p>Su número de guía de orden es: <strong>{ordenId}</strong></p>
                 <div>
                     <p>Resumen de tu compra:</p>
                     {   
@@ -100,7 +101,8 @@ const Checkout = () => {
                                 <div className="checkOut_producto_container_detail">
                                 <h5 className="nombreProducto">{item.nombre}</h5>
                                 <p>Cantidad: {item.cantidad}</p>
-                                <h6>Precio: ${item.precio * item.cantidad}</h6>
+                                <p>Precio unitario: ${item.precio}</p>
+                                <h6>Total: ${item.precio * item.cantidad}</h6>
                                 </div>
                                 <img src={item.img} alt={item.nombre}/>
                                 <hr/>
@@ -108,9 +110,7 @@ const Checkout = () => {
                         ))
                     }
                 </div>
-                <Link to="/"><button className="btn btn-primary m-5">Finalizar</button></Link>
                 <hr/>
-
                 <div>
                     <h4 className="mb-2">También puede interesarte:</h4>
                     <hr/>
@@ -118,6 +118,8 @@ const Checkout = () => {
                         <SlickSlide/>
                     </div>
                 </div>
+                <Link to="/"><button className="my-3">Finalizar</button></Link>
+                <hr/>
             </div>
         )
     }

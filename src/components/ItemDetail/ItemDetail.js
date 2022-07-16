@@ -43,10 +43,10 @@ const ItemDetail = ({item}) => {
 
     return (
         <div>
-        <div className="productos_detail_container my-2">
+        <div className="productos_detail_container mt-1">
             <h3 className="nombreProducto">{item.nombre}</h3>
             <img className='my-3' src={item.img} alt={item.nombre}/>
-            <p className='my-3'>{item.description}</p>
+            <p className='my-1'>{item.description}</p>
             <h4 className='my-3'>Precio: ${item.precio}</h4>
 
             <ItemCount 
@@ -62,10 +62,10 @@ const ItemDetail = ({item}) => {
             <div>
             {
                 carrito.length >0 &&
-                <Link to={'/cart'} className="btn btn-success">Terminar compra</Link>
+                <Link to={'/cart'} className="btn btn-success mb-2">Terminar compra</Link>
             }
             </div>
-            <button className='button_atras mt-4' onClick={handleAtras}>Atrás</button>
+            <button className='button_atras mt-1' onClick={handleAtras}>Atrás</button>
         </div>
     )
 }

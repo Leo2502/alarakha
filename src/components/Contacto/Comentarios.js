@@ -69,7 +69,7 @@ const Comentarios = () => {
                             />
                         {formik.errors.comentarios && <p className="alert alert-danger">{formik.errors.comentarios}</p>}
 
-                        <button type="submit" className="btn btn-dark">Enviar</button>
+                        <button type="submit" className="enlace">Enviar</button>
                     </form>
                 )}
             </Formik>
