@@ -15,7 +15,7 @@ const NavbarComp = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="header_container_navbar--links__container">
-                    <NavDropdown className='enlace enlace-prin' title={<span className="text-dark enlace">Catálogo</span>} id="basic-nav-dropdown">
+                    <NavDropdown className='enlace enlace-prin' title={<span className="text-dark">Catálogo</span>} id="basic-nav-dropdown">
                         <NavDropdown.Item><Link to={'categoria/brocheros'} className='enlace'>Brocheros</Link></NavDropdown.Item>
                         <NavDropdown.Item><Link to={'categoria/carteras'} className='enlace'>Carteras</Link></NavDropdown.Item>
                         <NavDropdown.Item><Link to={'categoria/mochilas'} className='enlace'>Mochilas</Link></NavDropdown.Item>
