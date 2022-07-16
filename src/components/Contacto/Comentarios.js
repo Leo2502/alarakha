@@ -58,14 +58,15 @@ const Comentarios = () => {
                         />
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
 
-                        <input
+                        <textarea 
                             value={formik.values.comentarios}
                             name="comentarios"
                             onChange={formik.handleChange}
                             type={"text"}
                             placeholder="Dejá tu comentario"
-                            className="form-control form_comentario my-2"
-                        />
+                            className="form-control display-7 my-2"
+                            data-form-field="Message"
+                            />
                         {formik.errors.comentarios && <p className="alert alert-danger">{formik.errors.comentarios}</p>}
 
                         <button type="submit" className="btn btn-dark">Enviar</button>
