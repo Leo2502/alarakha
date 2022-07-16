@@ -7,25 +7,28 @@ const schema = Yup.object().shape({
     email: Yup.string()
                 .required('Este campo es obligatorio')
                 .email('Formato de email inválido'),
-    comentarios: Yup.string()
+    pregunta: Yup.string()
                 .required('Este campo es obligatorio')
-                .min(2, 'El comentario es demasiado corto')
+                .min(2, 'La pregunta es demasiado corta')
                 .max(120, 'Máximo 120 caracteres'),
     
 })
 
-const Comentarios = () => {
+const Preguntas = ({item}) => {
 
-    const generarComentario = (values, onSubmitProps) => {
+    const generarPregunta = (values, onSubmitProps) => {
 
-        const comentario = {
-            coment: values
+        const id = item.id
+
+        const pregunta = {
+            question: values,
+            product_id: id,
         }
 
         const batch = writeBatch(dataBase)
-        const comentariosRef = collection(dataBase, "comentarios")
+        const preguntasRef = collection(dataBase, "preguntas")
 
-        addDoc(comentariosRef, comentario)
+        addDoc(preguntasRef, pregunta)
                 .then(() => {
                     batch.commit()
                 })
@@ -40,9 +43,9 @@ const Comentarios = () => {
             <Formik
                 initialValues={ {
                     email: '',
-                    comentarios: '',
+                    pregunta: '',
                 } }
-                onSubmit={generarComentario}
+                onSubmit={generarPregunta}
                 validationSchema={schema}
             >
                 {(formik) => (
@@ -59,18 +62,18 @@ const Comentarios = () => {
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
 
                         <textarea 
-                            value={formik.values.comentarios}
-                            name="comentarios"
+                            value={formik.values.pregunta}
+                            name="pregunta"
                             onChange={formik.handleChange}
                             type={"text"}
-                            placeholder="Dejá tu comentario"
+                            placeholder="Tu consulta no molesta"
                             className="form-control display-7 my-2"
                             data-form-field="Message"
-                            style={{height:"20vh"}}
+                            style={{height:"auto"}}
                             />
-                        {formik.errors.comentarios && <p className="alert alert-danger">{formik.errors.comentarios}</p>}
+                        {formik.errors.pregunta && <p className="alert alert-danger">{formik.errors.pregunta}</p>}
 
-                        <button type="submit" className="enlace">Enviar</button>
+                        <button type="submit" className="text-light enlace">Preguntar</button>
                     </form>
                 )}
             </Formik>
@@ -78,4 +81,4 @@ const Comentarios = () => {
     )
 }
 
-export default Comentarios
+export default Preguntas

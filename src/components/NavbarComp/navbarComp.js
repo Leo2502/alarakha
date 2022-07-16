@@ -11,9 +11,8 @@ const NavbarComp = () => {
         <Navbar className='header_container_navbar bg-leo' expand="lg">
             <Container className='d-flex justify-content-between'>
                 <Navbar.Brand className='navbar__logo animate__animated animate__bounce'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" className='w-100'/></Link></Navbar.Brand>
-                <CartWidget/>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav" className='navbar_collapse'>
                 <Nav className="header_container_navbar--links__container">
                     <NavDropdown className='enlace enlace-prin' title={<span className="text-dark">Catálogo</span>} id="basic-nav-dropdown">
                         <NavDropdown.Item><Link to={'categoria/brocheros'} className='enlace'>Brocheros</Link></NavDropdown.Item>
@@ -29,6 +28,7 @@ const NavbarComp = () => {
                     <a className="header__navlink enlace enlace-prin" href="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falarakhaneceseres%2Fposts%2F4078876035479333&show_text=true&width=500" target="_blank" rel="noopener noreferrer">Ventas al por mayor</a>
                     <a className="header__navlink enlace enlace-prin" href="https://www.instagram.com/stories/highlights/17909957731855954/" target="_blank" rel="noopener noreferrer"><BsInstagram/> Instatips</a>
                 </Nav>
+                <CartWidget/>
                 </Navbar.Collapse>
             </Container>
             </Navbar>

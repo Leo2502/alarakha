@@ -59,11 +59,11 @@ const Cart = () => {
             }
 
 
-            <h4 className="mt-3">Total a pagar: ${totalCarrito()}</h4>
+            <h4 className="mt-3 total_pagar">Total a pagar: ${totalCarrito()}</h4>
             <hr/>
 
             <div>
-                <h4 className="mb-2">También puede interesarte:</h4>
+                <h5 className="mb-2">También puede interesarte:</h5>
                 <hr/>
                 <div className="slick_container">
                     <SlickSlide/>

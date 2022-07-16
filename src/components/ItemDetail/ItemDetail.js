@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { useState, useContext } from 'react'
 import { ContextoCarrito } from "../../context/CartContext"
 import swal from 'sweetalert'
+import Preguntas from './Preguntas'
 
 const ItemDetail = ({item}) => {
 
@@ -43,29 +44,36 @@ const ItemDetail = ({item}) => {
 
     return (
         <div>
+        <button className='button_atras mt-1' onClick={handleAtras}>Atrás</button>
         <div className="productos_detail_container mt-1">
-            <h3 className="nombreProducto">{item.nombre}</h3>
-            <img className='my-3' src={item.img} alt={item.nombre}/>
-            <p className='my-1'>{item.description}</p>
-            <h4 className='my-3'>Precio: ${item.precio}</h4>
-
-            <ItemCount 
-                max={item.stock}
-                contador={cantidad}
-                setContador={setCantidad}
-                nombre={item.nombre}
-                agregado={agregado}
-                id={item.id}/>
-                
-            <br/>
+            <div className='d-flex justify-content-center'>
+                <img className='my-3' src={item.img} alt={item.nombre}/>
             </div>
-            <div>
-            {
-                carrito.length >0 &&
-                <Link to={'/cart'} className="btn btn-success mb-2">Terminar compra</Link>
-            }
+            <div className='productos_detail_container_nav'>
+                <h3 className="nombreProducto">{item.nombre}</h3>
+                <p className='my-1'>{item.description}</p>
+                <h4 className='mt-3'>${item.precio}</h4>
+                <div>
+                    <ItemCount 
+                            max={item.stock}
+                            contador={cantidad}
+                            setContador={setCantidad}
+                            nombre={item.nombre}
+                            agregado={agregado}
+                            id={item.id}/>
+                    <div>
+                        {
+                            carrito.length >0 &&
+                            <Link to={'/cart'} className="btn btn-success mt-2 mb-2">Terminar compra</Link>
+                        }
+                    </div>
+                    </div>
+                </div>
             </div>
-            <button className='button_atras mt-1' onClick={handleAtras}>Atrás</button>
+            <hr/>
+            <h3>Preguntas:</h3>
+            <hr/>
+            <Preguntas item={item}/>
         </div>
     )
 }

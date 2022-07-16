@@ -2,19 +2,28 @@
 @import "../../scss/mixins";
 
 .productos_detail_container{
-    @include flexbox(flex, column wrap, flex-start);
+    @include flexbox(flex, row nowrap, center);
     @media screen and (max-width: 480px){
         @include flexbox(flex, column wrap, space-around);
         align-items: center;
     }   
-    .nombreProducto{
-    text-transform: capitalize;
-        @media screen and (max-width: 480px){
-            font-size: 1.75em;
+    .productos_detail_container_nav{
+        @include flexbox(flex, column nowrap, flex-start);
+        .nombreProducto{
+            font-weight: bold;
+            text-transform: capitalize;
+                @media screen and (max-width: 480px){
+                    font-size: 1.75em;
+                }
+            }
+        .productos_detail_container_nav--cantidad{
+            @include flexbox(flex, row nowrap, flex-start);
+            align-items: center;
+            height: 30vh;
         }
     }
     img{
-        width: 25%;
+        width: 50%;
         @media screen and (max-width: 480px){
             width: 100%;
         }

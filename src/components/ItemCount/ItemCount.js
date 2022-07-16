@@ -23,8 +23,9 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
     
     return(
         <div className="mt-2">
-
+            <p className='mb-3'>Stock Disponible: {max}</p>
             <div className="container_counter">
+                <p>Cantidad:</p>
                 <button className="btn btn-unline-primary" onClick={reducir} disabled={contador < 0}>-</button>
                 <p>{contador}</p>
                 <button className="btn btn-danger" onClick={incrementar} disabled={contador === max}>+</button>
