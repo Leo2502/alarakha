@@ -1,4 +1,5 @@
 import './ItemCount.scss'
+import { Link } from "react-router-dom"
 
 const ItemCount = ({max, contador, setContador, agregado}) => {
 
@@ -31,7 +32,7 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
                 <button className="btn btn-danger" onClick={incrementar} disabled={contador === max}>+</button>
             </div>
 
-            <button className="btn btn-success" onClick={agregado} disabled={contador === 0}>Agregar al carrito</button>
+            <Link to={'/cart'}><button className="btn btn-success" onClick={agregado} disabled={contador === 0}>Agregar al carrito</button></Link>
             <br/>
         </div>
     )

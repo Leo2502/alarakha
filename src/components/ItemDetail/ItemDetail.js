@@ -19,15 +19,21 @@ const ItemDetail = ({item}) => {
     }
 
     const agregado = () => {
-        cantidad>0 && swal("Agregado!", `Agregaste ${cantidad} unidades de ${item.nombre} al carrito!`, "success");
         if (enCarrito(item.id)){
             const buscarProducto = carrito.map(producto=>{
-                if(producto.id===item.id){
-                    producto.cantidad=producto.cantidad+cantidad;
-                    item.stock=item.stock-producto.cantidad
+                if((producto.cantidad+cantidad)>item.stock){
+                    swal("Oops!", `No puedes agregar ${cantidad} unidades de ${item.nombre} al carrito, ya que superaste el límite de stock con los ya agregados!
+                                   La cantidad disponible es ${item.stock-producto.cantidad} unidades`, "error");
                     return producto;
                 } else {
-                    return producto;
+                    if((producto.id===item.id)){
+                        producto.cantidad=producto.cantidad+cantidad;
+                        swal("Agregado!", `Agregaste ${cantidad} unidades de ${item.nombre} al carrito!`, "success");
+                        return producto;
+                    } else {
+                        swal("Agregado!", `Agregaste ${cantidad} unidades de ${item.nombre} al carrito!`, "success");
+                        return producto;
+                    }
                 }
             })
             setCart([...buscarProducto])
@@ -36,11 +42,12 @@ const ItemDetail = ({item}) => {
                 ...item,
                 cantidad
             }
-            item.stock=item.stock-cantidad
             setCart([...carrito, alCarrito])
+            swal("Agregado!", `Agregaste ${cantidad} unidades de ${item.nombre} al carrito!`, "success");
         }
         setCantidad(0)
     }
+    
 
     return (
         <div>

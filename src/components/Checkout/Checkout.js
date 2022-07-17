@@ -82,7 +82,7 @@ const Checkout = () => {
                     vaciarCarrito()
                 })
         } else {
-            swal("Error!", "Hay productos sin stock! Vacíe el carrito y vuelva a intentar", "error");
+            swal("Oops!", "Hay productos sin stock! Vacíe el carrito y vuelva a intentar", "error");
         }
     }
 

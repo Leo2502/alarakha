@@ -66,7 +66,7 @@ const Preguntas = ({item}) => {
                             name="pregunta"
                             onChange={formik.handleChange}
                             type={"text"}
-                            placeholder="Tu consulta no molesta"
+                            placeholder="Hacé tu pregunta"
                             className="form-control display-7 my-2"
                             data-form-field="Message"
                             style={{height:"auto"}}
