@@ -9,13 +9,16 @@
         padding: 0.5em 0;
         text-decoration: underline;
     }
-    img{
+    .cart_producto_container_img{
         width: 10%;
         @media screen and (max-width: 480px) {
             width: 25%;
         }
         @media screen and (min-width: 481px) and (max-width: 960px) {
             width: 17%;
+        }
+        img{
+            width: 100%;
         }
     }
 }

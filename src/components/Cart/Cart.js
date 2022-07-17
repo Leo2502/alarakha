@@ -50,7 +50,9 @@ const Cart = () => {
                     <p>Precio unitario: ${item.precio}</p>
                     <h6>Total: ${item.precio * item.cantidad}</h6>
                     </div>
-                    <img src={item.img} alt={item.nombre}/>
+                    <Link to={`/item/${item.id}`} className="cart_producto_container_img">
+                        <img src={item.img} alt={item.nombre}/>
+                    </Link>
                     <button onClick={() => eliminarItem(item.id)} className="btn btn-danger"><BsTrash/></button>
                 </div>
                 <hr/>
