@@ -40,7 +40,7 @@ const Preguntas = ({item}) => {
 
         let nuevaPregunta = document.createElement("div");
         nuevaPregunta.innerHTML = ` <hr/>
-                                    "<p>${values.pregunta}</p>"`;
+                                    <p>${values.pregunta}</p>`;
         Preguntas.appendChild(nuevaPregunta);
 
         swal("Enviada!", "Pregunta enviada con éxito!", "success");
