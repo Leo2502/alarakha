@@ -27,8 +27,8 @@
         @media screen and (max-width: 480px){
             width: 100%;
         }
-        @media screen and (min-width: 481px) and (max-width:980px){
-            width: 100%;
+        @media screen and (min-width: 481px) and (max-width:960px){
+            width: 75%;
         } 
     }
 }
@@ -44,8 +44,8 @@
     @media screen and (max-width: 480px){
         width: 30%;
     }
-    @media screen and (min-width: 481px) and (max-width:980px){
-        width: 20%;
+    @media screen and (min-width: 481px) and (max-width:960px){
+        width: 25%;
     }    
     &:hover{
         background-color: rgb(34, 34, 34);
@@ -54,4 +54,7 @@
         @extend %transition-general;
         color:$hover-principal;
     }
+}
+#Preguntas{
+    margin-left: 2em;
 }

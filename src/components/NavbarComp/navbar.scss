@@ -28,7 +28,7 @@ header{
             width: 13%;
         }
         .navbar_collapse{
-            @media screen and (min-width: 981px){
+            @media screen and (min-width: 961px){
                 @include flexbox(flex, row nowrap, space-between);
             }
             .header_container_navbar--links__container{
@@ -58,18 +58,23 @@ header{
                     }
                 }
             }
-            .cartwidget{
-                font-size: 1.25em;
-                opacity: 1;
-                transition: all 500ms ease-in-out;
-                &:hover{
-                    transform: scale(1.25);
+            .cartWidget_div{
+                @media screen and (max-width:960px) {
+                    @include flexbox(flex, row wrap, center)
                 }
-            }
-            .cartwidget-none{
-                font-size: 0.01em;
-                opacity: 0;
-                transition: all 500ms ease-in-out;
+                .cartwidget{
+                    font-size: 1.25em;
+                    opacity: 1;
+                    transition: all 500ms ease-in-out;
+                    &:hover{
+                        transform: scale(1.25);
+                    }
+                }
+                .cartwidget-none{
+                    font-size: 0.01em;
+                    opacity: 0;
+                    transition: all 500ms ease-in-out;
+                }
             }
         }
     }

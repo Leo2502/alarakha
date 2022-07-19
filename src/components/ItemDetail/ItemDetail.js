@@ -81,6 +81,7 @@ const ItemDetail = ({item}) => {
             <h3>Preguntas:</h3>
             <hr/>
             <Preguntas item={item}/>
+            <div id="Preguntas"></div>
         </div>
     )
 }
