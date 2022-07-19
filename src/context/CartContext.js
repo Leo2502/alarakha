@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import swal from "sweetalert";
 
 export const ContextoCarrito = createContext()
 
@@ -36,7 +37,20 @@ export const CartProvider = ({children}) => {
     }
 
     const eliminarItem = (id) => {
-        setCart( carrito.filter((producto) => producto.id !== id) )
+      swal({
+        text: "¿Estás seguro/a que deseas quitar el producto del carrito?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Producto quitado del carrito!", {
+            icon: "success",
+          });
+          setCart( carrito.filter((producto) => producto.id !== id) )
+        }
+      });
     }
 
     return (
