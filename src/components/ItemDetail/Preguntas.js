@@ -73,7 +73,7 @@ const Preguntas = ({item}) => {
                             />
                         {formik.errors.pregunta && <p className="alert alert-danger">{formik.errors.pregunta}</p>}
 
-                        <button type="submit" className="text-light enlace">Preguntar</button>
+                        <button type="submit" className="text-light enlace button_preguntar">Preguntar</button>
                     </form>
                 )}
             </Formik>
