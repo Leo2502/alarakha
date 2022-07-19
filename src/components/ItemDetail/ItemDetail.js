@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const navigate = useNavigate()
 
-    const [cantidad, setCantidad] = useState(0)
+    const [cantidad, setCantidad] = useState(1)
 
     const {carrito, enCarrito, setCart} = useContext(ContextoCarrito)
 

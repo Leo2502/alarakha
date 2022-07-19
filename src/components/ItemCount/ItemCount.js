@@ -11,7 +11,7 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
         }
     }
     const reducir = () => {
-        contador>=1 && setContador( contador - 1 )
+        contador>1 && setContador( contador - 1 )
     }
 
     if (max === 0) {
@@ -27,7 +27,7 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
             <p className='mb-3'>Stock Disponible: {max}</p>
             <div className="container_counter">
                 <p>Cantidad:</p>
-                <button className="btn btn-unline-primary" onClick={reducir} disabled={contador < 0}>-</button>
+                <button className="btn btn-unline-primary" onClick={reducir} disabled={contador === 1}>-</button>
                 <p>{contador}</p>
                 <button className="btn btn-danger" onClick={incrementar} disabled={contador === max}>+</button>
             </div>
