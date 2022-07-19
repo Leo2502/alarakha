@@ -1,0 +1,11 @@
+@import '../../scss/extends';
+@import '../../scss/mixins';
+
+.container_counter{
+    @include flexbox(flex, row wrap, flex-start);
+    align-items: center;
+    margin-bottom: 0.8em;
+    button{
+        margin: 0 0.8em;
+    }
+}

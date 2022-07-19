@@ -7,6 +7,7 @@ import { collection, getDocs } from "firebase/firestore"
 import { dataBase } from "../../firebase/config"
 import { useEffect } from "react"
 import SlickSlide from './Slider'
+import CartCount from "../CartCount/CartCount"
 
 const Cart = () => {
 
@@ -46,7 +47,11 @@ const Cart = () => {
                 <div key={item.id} className="cart_producto_container my-2">
                     <div>
                     <h5 className="nombreProducto">{item.nombre}</h5>
-                    <p>Cantidad: {item.cantidad}</p>
+                    <CartCount 
+                        max={item.stock}
+                        cantidad={item.cantidad}
+                        id={item.id}
+                    />
                     <p>Precio unitario: ${item.precio}</p>
                     <h6>Total: ${item.precio * item.cantidad}</h6>
                     </div>
