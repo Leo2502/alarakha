@@ -30,7 +30,7 @@ const SlickSlide = () => {
               <p className='slide_container_nombre'>{item.nombre}</p>
               <img src={item.img} alt={item.nombre}/>
               <p className='slide_container_precio mt-2'>${item.precio}</p>
-              <Link to={`/item/${item.id}`}><button className="mb-3 enlace">Lo quiero!</button></Link>
+              <Link to={`/item/${item.id}`}><button className="button_general mb-3 enlace">Lo quiero!</button></Link>
             </div>
         </SwiperSlide>
         ))

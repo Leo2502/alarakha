@@ -15,12 +15,10 @@ const CartCount = ({max, cantidad, id}) => {
             setCantidadCarrito (cantidad+1)
         }
         actualizar()
-        console.log(carrito)
     }
     const reducir = () => {
-        actualizar()
         cantidad>1 && setCantidadCarrito (cantidad- 1)
-        console.log(carrito)
+        actualizar()
     }
 
     const actualizar = () => {
@@ -39,9 +37,9 @@ const CartCount = ({max, cantidad, id}) => {
         <div className="mt-2">
             <div className="container_counter">
                 <p>Cantidad:</p>
-                <button className="btn btn-unline-primary" onClick={reducir} disabled={cantidad === 1}>-</button>
+                <button className="btn btn-unline-primary container_counter_button" onClick={reducir} disabled={cantidad === 1}>-</button>
                 <p>{cantidad}</p>
-                <button className="btn btn-danger" onClick={incrementar} disabled={cantidad >= max}>+</button>
+                <button className="btn btn-danger container_counter_button" onClick={incrementar} disabled={cantidad >= max}>+</button>
             </div>
             <br/>
         </div>

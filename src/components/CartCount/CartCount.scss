@@ -5,7 +5,7 @@
     @include flexbox(flex, row wrap, flex-start);
     align-items: center;
     margin-bottom: 0.8em;
-    button{
+    .container_counter_button{
         margin: 0 0.8em;
     }
 }

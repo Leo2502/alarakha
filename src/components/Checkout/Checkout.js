@@ -118,7 +118,7 @@ const Checkout = () => {
                         <SlickSlide/>
                     </div>
                 </div>
-                <Link to="/"><button className="my-3">Finalizar</button></Link>
+                <Link to="/"><button className="my-3 button_finalizar">Finalizar</button></Link>
                 <hr/>
             </div>
         )
