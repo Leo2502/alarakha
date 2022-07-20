@@ -32,7 +32,20 @@ export const CartProvider = ({children}) => {
     }
   
     const vaciarCarrito = () => {
-      setCart( [] )
+      swal({
+        text: "¿Estás seguro/a que deseas vaciar el carrito?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Se vació el carrito con éxito!", {
+            icon: "success",
+          });
+          setCart( [] )
+        }
+      });
     }
 
     const eliminarItem = (id) => {
@@ -44,7 +57,7 @@ export const CartProvider = ({children}) => {
       })
       .then((willDelete) => {
         if (willDelete) {
-          swal("Producto quitado del carrito!", {
+          swal("Se quitó el producto del carrito con éxito!", {
             icon: "success",
           });
           setCart( carrito.filter((producto) => producto.id !== id) )
