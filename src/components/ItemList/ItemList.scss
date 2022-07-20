@@ -10,13 +10,6 @@
         width: 100%;
         @media screen and (max-width:480px){
             height: auto;
-            filter:none;
-        }
-        filter: grayscale(60%);
-        &:hover{
-            @extend %box-shadow-negra;
-            @extend %transition-general;
-            filter: none;
         }
     }
 }

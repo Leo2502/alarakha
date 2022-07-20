@@ -15,7 +15,6 @@ export const CartProvider = ({children}) => {
 
     const [carrito, setCart] = useState(carritoGuardado?JSON.parse(carritoGuardado):[])
     guardarStorage("Carrito", JSON.stringify(carrito))
-    console.log(carrito)
 
     const [resumen, setResumen] = useState([])
     const [ofertas, setOfertas] = useState([])
