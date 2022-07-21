@@ -31,21 +31,25 @@ export const CartProvider = ({children}) => {
       return carrito.reduce( (total, producto) => total += producto.cantidad, 0 )
     }
   
+    // const vaciarCarrito = () => {
+    //   swal({
+    //     text: "¿Estás seguro/a que deseas vaciar el carrito?",
+    //     icon: "warning",
+    //     buttons: true,
+    //     dangerMode: true,
+    //   })
+    //   .then((willDelete) => {
+    //     if (willDelete) {
+    //       swal("Se vació el carrito con éxito!", {
+    //         icon: "success",
+    //       });
+    //       setCart( [] )
+    //     }
+    //   });
+    // }
+
     const vaciarCarrito = () => {
-      swal({
-        text: "¿Estás seguro/a que deseas vaciar el carrito?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Se vació el carrito con éxito!", {
-            icon: "success",
-          });
-          setCart( [] )
-        }
-      });
+      setCart([])
     }
 
     const eliminarItem = (id) => {
