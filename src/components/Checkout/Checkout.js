@@ -40,7 +40,7 @@ const Checkout = () => {
 
     window.scrollTo(0, 0)
 
-    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen } = useCartContext()
+    const { carrito, totalCarrito, vaciarCarrito, resumen, setResumen, setCart } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)
 
@@ -79,7 +79,7 @@ const Checkout = () => {
                     batch.commit()
                     setOrdenId(doc.id)
                     setResumen(carrito)
-                    vaciarCarrito()
+                    setCart([])
                 })
         } else {
             swal("Oops!", "Hay productos sin stock! Vacíe el carrito y vuelva a intentar", "error");
