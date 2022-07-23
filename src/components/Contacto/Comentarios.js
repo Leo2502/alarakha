@@ -11,7 +11,6 @@ const schema = Yup.object().shape({
                 .required('Este campo es obligatorio')
                 .min(2, 'El comentario es demasiado corto')
                 .max(120, 'Máximo 120 caracteres'),
-    
 })
 
 const Comentarios = () => {
@@ -56,7 +55,7 @@ const Comentarios = () => {
                             placeholder="juan.diaz@gmail.com"
                             className="form-control my-2"
                         />
-                        {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
+                        {formik.errors.email && <p className="alert-message">{formik.errors.email}</p>}
 
                         <textarea 
                             value={formik.values.comentarios}
@@ -68,7 +67,7 @@ const Comentarios = () => {
                             data-form-field="Message"
                             style={{height:"20vh"}}
                             />
-                        {formik.errors.comentarios && <p className="alert alert-danger">{formik.errors.comentarios}</p>}
+                        {formik.errors.comentarios && <p className="alert-message">{formik.errors.comentarios}</p>}
 
                         <button type="submit" className="enlace button_general">Enviar</button>
                     </form>

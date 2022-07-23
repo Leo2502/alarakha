@@ -155,7 +155,7 @@ const Checkout = () => {
                             placeholder="Juan Díaz"
                             className="form-control my-2"
                         />
-                        {formik.errors.nombre && <p className="alert alert-danger">{formik.errors.nombre}</p>}
+                        {formik.errors.nombre && <p className="alert-message">{formik.errors.nombre}</p>}
 
                         <input
                             value={formik.values.email}
@@ -165,7 +165,7 @@ const Checkout = () => {
                             placeholder="juan.diaz@gmail.com"
                             className="form-control my-2"
                         />
-                        {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
+                        {formik.errors.email && <p className="alert-message">{formik.errors.email}</p>}
 
                         <input
                             value={formik.values.telefono}
@@ -175,7 +175,7 @@ const Checkout = () => {
                             placeholder="1132323232"
                             className="form-control my-2"
                         />
-                        {formik.errors.telefono && <p className="alert alert-danger">{formik.errors.telefono}</p>}
+                        {formik.errors.telefono && <p className="alert-message">{formik.errors.telefono}</p>}
 
                         <input
                             value={formik.values.calle}
@@ -185,7 +185,7 @@ const Checkout = () => {
                             placeholder="Av. de Mayo"
                             className="form-control my-2"
                         />
-                        {formik.errors.calle && <p className="alert alert-danger">{formik.errors.calle}</p>}
+                        {formik.errors.calle && <p className="alert-message">{formik.errors.calle}</p>}
 
                         <input
                             value={formik.values.altura}
@@ -195,7 +195,7 @@ const Checkout = () => {
                             placeholder="1250"
                             className="form-control my-2"
                         />
-                        {formik.errors.altura && <p className="alert alert-danger">{formik.errors.altura}</p>}
+                        {formik.errors.altura && <p className="alert-message">{formik.errors.altura}</p>}
                         
                         <input
                             value={formik.values.codigoPostal}
@@ -205,7 +205,7 @@ const Checkout = () => {
                             placeholder="1607"
                             className="form-control my-2"
                         />
-                        {formik.errors.codigoPostal && <p className="alert alert-danger">{formik.errors.codigoPostal}</p>}
+                        {formik.errors.codigoPostal && <p className="alert-message">{formik.errors.codigoPostal}</p>}
 
                         <button type="submit" className="btn btn-primary">Enviar</button>
                     </form>
