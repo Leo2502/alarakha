@@ -2,6 +2,7 @@ import { Formik } from "formik"
 import * as Yup from 'yup'
 import { collection, addDoc, writeBatch } from "firebase/firestore"
 import { dataBase } from "../../firebase/config"
+import swal from 'sweetalert'
 
 const schema = Yup.object().shape({
     email: Yup.string()
@@ -30,6 +31,8 @@ const Comentarios = () => {
                 })
 
         onSubmitProps.resetForm()
+
+        swal("Enviado!", "Comentario enviado con éxito!", "success");
 
     }
 
