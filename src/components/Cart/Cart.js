@@ -69,17 +69,17 @@ const Cart = () => {
             <h4 className="mt-3 total_pagar">Total a pagar: ${totalCarrito()}</h4>
             <hr/>
 
+            <div className="my-4">
+                <Link to="/categorias"><button className="btn btn-primary m-1">Continuar comprando</button></Link>
+                <Link to="/checkout" className="btn btn-success m-1">Terminar compra</Link>
+                <button onClick={vaciarCarrito} className="btn btn-danger m-1">Vaciar carrito</button>
+            </div>
             <div>
                 <h5 className="mb-2">También puede interesarte:</h5>
                 <hr/>
                 <div className="slick_container">
                     <SlickSlide/>
                 </div>
-            </div>
-            <div className="my-4">
-            <Link to="/categorias"><button className="btn btn-primary m-1">Continuar comprando</button></Link>
-            <Link to="/checkout" className="btn btn-success m-1">Terminar compra</Link>
-            <button onClick={vaciarCarrito} className="btn btn-danger m-1">Vaciar carrito</button>
             </div>
         </div>
     )
