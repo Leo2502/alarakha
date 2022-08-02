@@ -7,14 +7,15 @@
     .nombreProducto{
         text-transform: capitalize;
         padding: 0.25em 0.5em;
-        background: linear-gradient($hover-principal 0 0) top /100% 5% no-repeat,
-        linear-gradient($hover-principal 0 0) bottom /100% 5% no-repeat,
-        linear-gradient($hover-principal 0 0) left /var(--d,0%) 100% no-repeat;
+        background: linear-gradient(black 0 0) top /100% 5% no-repeat,
+        linear-gradient(black 0 0) bottom /100% 5% no-repeat,
+        linear-gradient(black 0 0) left /var(--d,0%) 100% no-repeat;
         transition: all 500ms ease-out;
     }
     &:hover{
         h4{
         --d:100%;
+        color: $hover-principal;
         transition: all 500ms ease-out;
         }
     }
